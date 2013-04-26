@@ -1,0 +1,40 @@
+/* Responsive Design Layout Styling */
+/* Default styles for Mobile Layout */
+@charset "UTF-8";
+.wtb
+	{
+		background:repeat-x;
+		background-image:url(wb.jpg);
+		height:400px;
+		background-color:#4ea6a7;
+	}
+.tlc
+	{
+		background-image:url(tlc.png);
+		height:50;
+		width:50;
+	}
+
+/* Styles for first breakpoint at 650px */
+@media only screen and (min-width:780px) 
+{
+
+ .wtb
+	 {
+		 height:200;
+	 }
+ 
+ 
+ 
+ 
+ 
+}
+/* Styles for second breakpoint at 980px */
+@media only screen and (min-width:1030px) 
+{
+.wtb
+	 {
+		 height:20;
+	 }
+
+}
