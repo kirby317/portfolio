@@ -1,6 +1,11 @@
 /* Responsive Design Layout Styling */
 /* Default styles for Mobile Layout */
 @charset "UTF-8";
+p{
+	position:absolute;
+	top:50;
+	left:100;
+	}
 .wtb
 	{
 		background:repeat-x;
