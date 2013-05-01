@@ -1,9 +1,22 @@
 /* Responsive Design Layout Styling */
 /* Default styles for Mobile Layout */
-.wasd{
-	margin:auto;
+nav{
+	width:90%;
+	margin:0 auto;
+	}
+nav div{
+	display:inline-block;
+	width:15%;
+	}
+nav img{
+	width:100%;
 	}
 
+.line {
+	background-image: url(images/y2x2.png);
+	width: 100%;
+	height: 2px;
+}
 .wtb
 	{
 		height:50px;
@@ -37,9 +50,12 @@
 /* Styles for second breakpoint at 980px */
 @media only screen and (max-width:500px) 
 {
-.wtb
+ .wtb
 	 {
-		 height:200px;
+		 height=100px;
 	 }
-
-}
+nav div{
+	display:inline-block;
+	width:15%;
+	}
+}.
