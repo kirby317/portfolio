@@ -4,6 +4,10 @@ nav{
 	width:90%;
 	margin:0 auto;
 	}
+section
+	{
+	color:#096;
+	}
 nav div{
 	display:inline-block;
 	width:15%;
@@ -11,6 +15,10 @@ nav div{
 nav img{
 	width:100%;
 	}
+	spacer
+	{
+		width:0%;
+		}
 
 .line {
 	background-image: url(images/y2x2.png);
@@ -32,19 +40,25 @@ nav img{
 	}
 
 /* Styles for first breakpoint at 650px */
-@media only screen and (max-width:200px) 
-{
+@media only screen and (max-width:650px) 
+{section
+	{
+	color:#000;
+	}
 
  .wtb
 	 {
-		 height=100px;
+		 height:100px;
 	 }
  
  
  body{
 	 background-color:#0F6;
 	 }
- 
+ 	spacer
+	{
+		width:10%;
+		}
  
 }
 /* Styles for second breakpoint at 980px */
@@ -52,10 +66,14 @@ nav img{
 {
  .wtb
 	 {
-		 height=100px;
+		 height:100px;
 	 }
 nav div{
 	display:inline-block;
 	width:15%;
 	}
+		spacer
+	{
+		width:15%;
+		}
 }.
