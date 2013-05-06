@@ -1,5 +1,9 @@
 /* Responsive Design Layout Styling */
 /* Default styles for Mobile Layout */
+.space{
+	width:0%;
+	}
+
 nav{
 	width:90%;
 	margin:0 auto;
@@ -41,9 +45,13 @@ nav img{
 
 /* Styles for first breakpoint at 650px */
 @media only screen and (max-width:650px) 
-{section
+{
+	section
 	{
 	color:#000;
+	}
+.space{
+	width:7%;
 	}
 
  .wtb
@@ -55,14 +63,9 @@ nav img{
  body{
 	 background-color:#0F6;
 	 }
- 	spacer
-	{
-		width:10%;
-		}
- 
 }
 /* Styles for second breakpoint at 980px */
-@media only screen and (max-width:500px) 
+@media only screen and (max-width:980px) 
 {
  .wtb
 	 {
@@ -72,8 +75,7 @@ nav div{
 	display:inline-block;
 	width:15%;
 	}
-		spacer
-	{
+.space{
 		width:15%;
-		}
+	}
 }.
