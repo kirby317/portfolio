@@ -1,6 +1,5 @@
 // JavaScript Document
 $(document).ready(function (e) {
-    alert("hi");
 	//all jquery goes here
     //THIS CODE ASSUMES YOU CTRL+A > F2 > #whatDidYouMultiNameAllYourPictures# > ENTER IN THE "GALLERY" FOLDER
 	//---------------------\/
@@ -10,7 +9,7 @@ $(document).ready(function (e) {
     var jpegsOrPngs = "jpeg"
 	var whereAreWeAt = 1;
 	
-	var howManyCollumns = 0;
+	var howManyCollumns;
 
 	if (screen.width <= 650)
 	{
@@ -25,25 +24,30 @@ $(document).ready(function (e) {
 	    howManyCollumns = 6;
 	}
 
-	document.getElementById("content") = "<p>hi</p>";
-
 	var rows = numberOfPictures/howManyCollumns;
 	var leftovers = numberOfPictures%howManyCollumns;
+	//this too
 	var whenShouldIStop = rows * howManyCollumns - leftovers;
-
+	//this is wrong
+	
 	var theWholeThing = "<table width=\"100%\">";
-	if (counter != whenShouldIStop) {
+	alert("rows" + rows + "the whole thing" + theWholeThing + "collumns" + howManyCollumns);
+
+
+ //add where should I stop
 	    for (I = 0; I < rows; I++) {
 	        theWholeThing += "<tr>"
+	        alert(theWholeThing);
 	        for (o = 0; o < howManyCollumns; o++) {
 	            theWholeThing += "<td><img src=\"images/gallery/" + whatDidYouMultiNameAllYourPictures + " (" + whereAreWeAt + ")." + jpegsOrPngs + "</td>";
 	            counter++;
+	            
 	        }
 	        theWholeThing += "</tr>";
 	    }
 	    theWholeThing += "</table>";
-	}
-
+	
+	alert(theWholeThing);
 	document.getElementById("content") = theWholeThing;
 
 
