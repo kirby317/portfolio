@@ -1,9 +1,10 @@
-// JavaScript Document
+  // JavaScript Document
 $(document).ready(function (e) {
 	//all jquery goes here
     //THIS CODE ASSUMES YOU CTRL+A > F2 > #whatDidYouMultiNameAllYourPictures# > ENTER IN THE "GALLERY" FOLDER
 	//---------------------\/
 	var numberOfPictures = 14;
+	
 	//----------------------\/
 	var whatDidYouMultiNameAllYourPictures = "picture"
     var jpegsOrPngs = "jpeg"
@@ -24,7 +25,8 @@ $(document).ready(function (e) {
 	    howManyCollumns = 6;
 	}
 
-	var rows = numberOfPictures/howManyCollumns;
+	var rows = numberOfPictures / howManyCollumns;
+	
 	var leftovers = numberOfPictures%howManyCollumns;
 	//this too
 	var whenShouldIStop = rows * howManyCollumns - leftovers;
@@ -48,7 +50,8 @@ $(document).ready(function (e) {
 	    theWholeThing += "</table>";
 	
 	alert(theWholeThing);
-	document.getElementById("content") = theWholeThing;
+	var asdf = document.getElementById("content");
+	asdf.innerHTML = theWholeThing;
 
 
 	    //tr - row
