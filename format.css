@@ -3,7 +3,17 @@
 .space{
 	width:0%;
 	}
-
+.shade{
+	 color:#808080;
+     opacity:0.5;
+     position:absolute;
+     top:0;
+     left:0;
+     opacity:50;
+     width:3000px;
+     height:3000px;
+     
+	 }
 nav{
 	width:90%;
 	margin:0 auto;

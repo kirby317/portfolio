@@ -1,5 +1,6 @@
   // JavaScript Document
 $(document).ready(function (e) {
+    $("#shade").attr("visibility", "hidden");
 	//all jquery goes here
     //THIS CODE ASSUMES YOU CTRL+A > F2 > #whatDidYouMultiNameAllYourPictures# > ENTER IN THE "GALLERY" FOLDER
 	//---------------------\/
@@ -7,60 +8,65 @@ $(document).ready(function (e) {
 	
 	//----------------------\/
 	var whatDidYouMultiNameAllYourPictures = "picture"
-    var jpegsOrPngs = "jpeg"
+    var jpegsOrPngs = "JPG"
 	var whereAreWeAt = 1;
 	
 	var howManyCollumns;
 
-	if (screen.width <= 650)
+	if (window.innerWidth <= 650)
 	{
 	    howManyCollumns = 2;
 	}
-	if (screen.width > 650 && screen.width <= 980)
+	if (window.innerWidth > 650 && window.innerWidth <= 980)
 	{
-	    howManyCollumns = 4;
+	    howManyCollumns = 3;
 	}
-	if (screen.width > 980)
+	if (window.innerWidth > 980)
 	{
-	    howManyCollumns = 6;
+	    howManyCollumns = 5;
 	}
 
 	var rows = numberOfPictures / howManyCollumns;
 	
-	var leftovers = numberOfPictures%howManyCollumns;
-	//this too
-	var whenShouldIStop = rows * howManyCollumns - leftovers;
-	//this is wrong
+
 	
 	var theWholeThing = "<table width=\"100%\">";
-	alert("rows" + rows + "the whole thing" + theWholeThing + "collumns" + howManyCollumns);
-
-
- //add where should I stop
-	    for (I = 0; I < rows; I++) {
-	        theWholeThing += "<tr>"
-	        alert(theWholeThing);
-	        for (o = 0; o < howManyCollumns; o++) {
-	            theWholeThing += "<td><img src=\"images/gallery/" + whatDidYouMultiNameAllYourPictures + " (" + whereAreWeAt + ")." + jpegsOrPngs + "</td>";
-	            counter++;
-	            
-	        }
-	        theWholeThing += "</tr>";
-	    }
-	    theWholeThing += "</table>";
+	rows = Math.floor(rows);
 	
-	alert(theWholeThing);
-	var asdf = document.getElementById("content");
-	asdf.innerHTML = theWholeThing;
-
-
+	var collumns = howManyCollumns;
+    //rows
+    //thewholething
+	var counter = 1;
+    var percent = 100 / howManyCollumns
+	for (u = 0; u < rows; u++)
+	{
+        theWholeThing += "<tr>"
+	    for (I = 0; I < collumns; I++)
+	    {
+	        theWholeThing += "<td width=" + percent + "% ><img onclick=\"fullscreen(" + counter + ")\" height=\"300\" width=\"100%\" src=\"images/gallery/picture (" + counter + ")." + jpegsOrPngs + "\">"
+	        counter++;
+	    }
+        theWholeThing += "</tr>"
+	}
+	$("#content").html(theWholeThing);
 	    //tr - row
         //td - collumn
 
 
 
 });
+function fullscreen(picnum)
+{
+    
+    $("#shade").attr("background-color", "#666");
+    $("#shade").attr("opacity", "50%");
+    $("#shade").attr("opacity", "50%");
+    $("#shade").attr("position", "absolute");
+    $("#shade").attr("top", "0");
+    $("#shade").attr("left", "0");
+    $("#shade").attr("opacity", "50%");
+    $("#shade").attr("width", "3000");
+    $("#shade").attr("height", "3000");
 
-function teeAre(howmanycollumnsagain) {
-
+    alert("did it");
 }
