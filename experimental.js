@@ -1,65 +1,68 @@
 // JavaScript Document
-
-
-
+var Mouse = { //make a globally available object with x,y attributes 
+    x: 0,
+    y: 0
+}
+var on = true;
+var color;
 
 $(document).ready(function () {
 
-    var mousepos;
 
 
-
-    function writeMessage(canvas, message) {
-        var context = canvas.getContext('2d');
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.font = '18pt Calibri';
-        context.fillStyle = 'black';
-        context.fillText(message, 10, 25);
-        rgb();
-    }
-    function getMousePos(canvas, evt) {
-        var rect = canvas.getBoundingClientRect();
-        return {
-            x: evt.clientX - rect.left,
-            y: evt.clientY - rect.top
-        };
-    }
-    var canvas = document.getElementById('myCanvas');
-    var context = canvas.getContext('2d');
-
-    canvas.addEventListener('mousemove', function (evt) {
-        mousePos = getMousePos(canvas, evt);
-        var message = 'color = ' + color;
-        writeMessage(canvas, message);
-    }, false);
-
-    canvas.addEventListener('mousedown', function (evt) {
-        mousePos = getMousePos(canvas, evt);
-        alert("x = " + mousepos.x + " y = " + mousepos.y);
-        draw(mousepos.x, mousepos.y);
-        
-    }, false);
-
-    
     var canvas = document.getElementById('myCanvas');
     var context = canvas.getContext('2d');
     var x;
     var wiidth;
-    var color;
+    var num = 0;
     color = "red";
-    var mousepos;
+    rgb();
+    
 
-    wiidth = window.innerWidth;
+    wiidth = window.innerWidth - 17;
     var heiight = window.innerHeight;
     $("canvas").attr("height", heiight);
     $("canvas").attr("width", wiidth);
-
     
+    canvas.onmousemove = function (event) { // this  object refers to canvas object 
+        Mouse = {
+            x: event.pageX - this.offsetLeft,
+            y: event.pageY - this.offsetTop }}
+
+    var stop = false;
+
+    $("canvas").mousedown(function () {
+        setInterval(function () {
+                $("canvas").drawImage({
+                    x: Mouse.x, y: Mouse.y,
+                    source: "images/" + color + "small.png",
+                    fromCenter: true,
+                    layer: true,
+                });
+        }, 1);
+    });
+ 
+    $("canvas").mouseup(function () {
+        window.clearInterval();
+    });
 
 
+    function text()
+    {
+      
+    $("canvas").drawText({
+        fillStyle: "#9cf",
+        strokeStyle: "#25a",
+        strokeWidth: 2,
+        x: wiidth / 2, y: 20,
+        fontSize: "36pt",
+        fontFamily: "Verdana, sans-serif",
+        text: "color = " + color
+    });
+    }
 
 
-       function rgb() {
+    function rgb() {
 
         $("canvas").drawImage({
             x: 28, y: 40,
@@ -68,7 +71,7 @@ $(document).ready(function () {
             layer: true,
             click: function (layer) {
                 color = "red";
-                writeMessage();
+                text();
             }
         });
         $("canvas").drawImage({
@@ -78,7 +81,7 @@ $(document).ready(function () {
             layer: true,
             click: function (layer) {
                 color = "blue";
-                writeMessage();
+                text();
             }
         });
         $("canvas").drawImage({
@@ -88,39 +91,11 @@ $(document).ready(function () {
             layer: true,
             click: function (layer) {
                 color = "green";
-                writeMessage();
+                text();
             }
         });
 
     }
 
-    draw(x, y)
-    {
-
-        $("canvas").drawImage({
-            x: x, y: y,
-            source: "images/black.png",
-            fromCenter: false,
-            layer: true,
-        });
-    }
-
-
-
-
 });
 
-
-
-
-
-
-//$("#canvas").mousedown(function () {
-
-
-//    alert("ohhi");
-
-//});
-
-
-//http://www.html5canvastutorials.com/advanced/html5-canvas-mouse-coordinates/
