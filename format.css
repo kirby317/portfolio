@@ -97,6 +97,9 @@
       .menu {
         display: none;
     }
+    #ie {
+        : url()
+    }
     .wtb {
         height: 75px;
         width:initial;
