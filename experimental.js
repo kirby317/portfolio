@@ -5,7 +5,10 @@ var Mouse = { //make a globally available object with x,y attributes
 }
 var on = true;
 var color;
-
+var spray = false;
+function spray() {
+    alert("HI");
+}
 $(document).ready(function () {
 
 
@@ -15,7 +18,6 @@ $(document).ready(function () {
     var x;
     var wiidth;
     var num = 0;
-    color = "red";
     rgb();
     
 
@@ -32,14 +34,19 @@ $(document).ready(function () {
     var stop = false;
 
     $("canvas").mousedown(function () {
-        setInterval(function () {
+        if (spray == true) {
+            Mouse.x = Mouse.x + Math.random() * 100 - 50;
+            Mouse.y = Mouse.y + Math.random() * 100 - 50;
+        }
+            setInterval(function () {
                 $("canvas").drawImage({
                     x: Mouse.x, y: Mouse.y,
                     source: "images/" + color + "small.png",
                     fromCenter: true,
                     layer: true,
                 });
-        }, 1);
+            }, 1);
+
     });
  
     $("canvas").mouseup(function () {
@@ -61,7 +68,11 @@ $(document).ready(function () {
     });
     }
 
-
+    function spray() {
+        if (spray == true)
+            spray = false;
+        else { spray = true; }
+    }
     function rgb() {
 
         $("canvas").drawImage({

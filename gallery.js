@@ -60,13 +60,13 @@ function fullscreen(picnum)
     
     $("#shade").attr("background-color", "#666");
     $("#shade").attr("opacity", "50%");
-    $("#shade").attr("opacity", "50%");
     $("#shade").attr("position", "absolute");
     $("#shade").attr("top", "0");
     $("#shade").attr("left", "0");
     $("#shade").attr("opacity", "50%");
-    $("#shade").attr("width", "3000");
-    $("#shade").attr("height", "3000");
-
+    $("#shade").attr("width", "100%");
+    $("#shade").attr("height", "100%");
+    $("#shade").attr("visibility", "visible");
+    $("#shade").attr("z-index", "100");
     alert("did it");
 }
